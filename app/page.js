@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
      <CardsComponet/>
+     <h1>hola</h1>
     </main>
   )
 }
