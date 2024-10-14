@@ -1,6 +1,7 @@
 import React from 'react'
-import { Box, Grid } from '@mui/material';
+import { Box } from '@mui/material';
 import CartInitiation from './CartInitiation';
+import Grid from '@mui/material/Grid2';
 
 export default function CardsComponet() {
 
