@@ -1,10 +1,15 @@
 "use client";
 import * as React from 'react';
 import NavLogin from '../components/Nav/NavLogin';
-import Carousel from '../components/carousel/carousel';
-import CardsComponetCategory from '../components/Carts/CardsComponetCategory';
-import { Typography } from '@mui/material';
-import ComponentHomeCategory from '../components/Category/componentHomeCategory';
+import Carousel from '../components/HomeComponest/carousel/carousel';
+import CardsComponetCategory from '../components/HomeComponest/CardsComponetCategory';
+import { Anchetas } from '../arrays';
+import HomeFavorites from '../components/HomeComponest/HomeFavorites';
+import HomeLatestProducts from '../components/HomeComponest/HomeLatestProducts';
+import HomeWhyChooseUs from '../components/HomeComponest/HomeWhyChooseUs';
+import Footer from '../components/Footer';
+
+
 
 
 export default function Home() {
@@ -12,10 +17,11 @@ export default function Home() {
     <div>
       <NavLogin/>
       <Carousel/>
-      
-      
-      <CardsComponetCategory/>
-      <ComponentHomeCategory/>
+      <CardsComponetCategory items={Anchetas}/>
+      <HomeFavorites/>
+      <HomeLatestProducts/>
+      <HomeWhyChooseUs/>
+      <Footer/>
     </div>
   );
 }

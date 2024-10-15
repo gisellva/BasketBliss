@@ -12,13 +12,13 @@ export default function CardsComponetCategory() {
 
   return (
     <Box sx={{ flexGrow: 1, padding: 0, marginTop: 
-    {xs: 16,sm:3,   md: 6,  lg: -10 }
+    {xs: 19,sm:3,   md: 6,  lg: -10 }
      }}>
       <Stack sx=
       {{
        justifyContent: "center",
        alignItems: "center",
-       marginBottom:7
+       marginBottom:9
       }}>
       <Typography variant="h4" color="primary" >Nuestras categorías</Typography>
       </Stack>
@@ -46,7 +46,7 @@ export default function CardsComponetCategory() {
                 title={category.title}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h5" component="div" color='primary'>
                   {category.title}
                 </Typography>
               </CardContent>
