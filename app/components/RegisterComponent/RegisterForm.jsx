@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Grid, TextField, Button, Typography,Stack } from '@mui/material';
 
-export default function LoginForm() {
+export default function RegisterForm() {
   const [formData, setFormData] = useState({
     nombre: '',
     cedula: '',

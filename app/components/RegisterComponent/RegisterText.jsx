@@ -1,7 +1,7 @@
 import { Box, Typography,Stack } from '@mui/material'
 import React from 'react'
 
-export default function LoginText() {
+export default function RegisterText() {
   return (
     <Box  sx={{ marginTop: 2, marginBottom:4, padding:2 }}>
         <Stack

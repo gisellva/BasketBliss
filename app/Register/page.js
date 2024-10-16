@@ -1,7 +1,17 @@
+"use client";
 import React from 'react'
+import Navlogged from '../components/Nav/Navlogged';
+import RegisterForm from '../components/RegisterComponent/RegisterForm';
+import RegisterText from '../components/RegisterComponent/RegisterText';
+import Footer from '../components/Footer';
 
-export default function page() {
+export default function Register() {
   return (
-    <div>Register</div>
+    <div>
+    <Navlogged/>
+    <RegisterForm/>
+    <RegisterText/>
+    <Footer/>
+    </div>
   )
 }

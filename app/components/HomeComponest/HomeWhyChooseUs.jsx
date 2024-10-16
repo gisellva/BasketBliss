@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import CradsWhyChooseUs from '../Carts/CradsWhyChooseUs'
+import CradsWhyChooseUs from './CradsWhyChooseUs'
 import { Grid } from '@mui/joy'
 
 export default function HomeWhyChooseUs() {

@@ -12,7 +12,7 @@ export default function CardsComponetCategory() {
 
   return (
     <Box sx={{ flexGrow: 1, padding: 0, marginTop: 
-    {xs: 19,sm:3,   md: 6,  lg: -10 }
+    {xs: 16,sm:3,   md: 6,  lg: -10 }
      }}>
       <Stack sx=
       {{
