@@ -15,7 +15,7 @@ const EmailConfirmation = () => {
         marginBottom:3.4 
       }}
     >
-      {/* Imagen de ejemplo */}
+     
       <img 
         src="/images/correo.png" 
         alt="Confirm Email" 
