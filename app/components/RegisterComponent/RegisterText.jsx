@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function RegisterText() {
   return (
-    <Box  sx={{ marginTop: 2, marginBottom:4, padding:2 }}>
+    <Box  sx={{ marginTop: 2, marginBottom:30, padding:2 }}>
         <Stack
         direction="column"
         spacing={2}

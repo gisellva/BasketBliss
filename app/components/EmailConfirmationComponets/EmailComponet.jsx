@@ -12,7 +12,7 @@ const EmailConfirmation = () => {
         padding: 3,
         flexDirection: { xs: 'column', md: 'row' },
         textAlign: 'center',
-        marginBottom:3.4 
+        marginBottom:30
       }}
     >
      

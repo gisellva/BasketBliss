@@ -97,7 +97,7 @@ return (
     justifyContent: "center",
     alignItems: "center",
     marginTop:4,
-    marginBottom:4,
+    marginBottom:30,
     
     }}>
     <Typography variant="body1" color="initial">¿Aún no tienes una cuenta? </Typography>
