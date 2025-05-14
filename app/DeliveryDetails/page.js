@@ -11,13 +11,16 @@ export default function page() {
   return (
     <div>     
       <NavLogin/>
-      <Box  padding={2}>
+      <Box  padding={1.5}>
       <Typography variant="h4" color="hotpink" gutterBottom>
       Estado de tu pedido
       </Typography>
       </Box>
-     <OrderStatus/>
-      <Footer/>
+      <Box  marginBottom={4}>
+      <OrderStatus/>
+      </Box>
+     
+      <Footer />
     </div>
   );
 }
