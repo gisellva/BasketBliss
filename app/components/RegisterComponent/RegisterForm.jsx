@@ -16,10 +16,75 @@ export default function RegisterForm() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+   
+    const resUser = await fetch('http://127.0.0.1:8000/api/registrar-cliente/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nombre: formData.nombre,
+        correo_electronico: formData.correo,
+        password: formData.contrasena,
+        tipo_usuario: 'cliente'
+      })
+    });
+
+    if (!resUser.ok) {
+      const error = await resUser.json();
+      console.error('Error creando usuario:', error);
+      alert('No se pudo registrar el usuario');
+      return;
+    }
+
+    
+    const resLogin = await fetch('http://127.0.0.1:8000/api/login/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: formData.correo,
+        password: formData.contrasena
+      })
+    });
+
+    const loginData = await resLogin.json();
+    if (!resLogin.ok) {
+      alert("Usuario creado, pero no se pudo iniciar sesión.");
+      return;
+    }
+
+    localStorage.setItem('access_token', loginData.access);
+    localStorage.setItem('refresh_token', loginData.refresh);
+
+   
+    const resCliente = await fetch('http://127.0.0.1:8000/api/clientes/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${loginData.access}`
+      },
+      body: JSON.stringify({})
+    });
+
+    if (!resCliente.ok) {
+      alert("Usuario creado, pero no se pudo registrar como cliente.");
+      return;
+    }
+
+    alert('Registro exitoso 🎉');
+    window.location.href = '/Login';
+
+  } catch (error) {
+    console.error('Error en el registro:', error);
+    alert('Algo falló al registrar. Intenta más tarde.');
+  }
+};
 
   return (
     <Box sx={{ marginTop: 4,padding:3  }}>

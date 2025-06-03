@@ -3,7 +3,7 @@ import { Box, TextField, Button, Typography, Grid, Stack } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import Link from 'next/link';
 
-export default function LoginForm() {
+export default function LoginFormAdmi() {
 const [formData, setFormData] = useState({
 email: '',
 password: ''
@@ -67,7 +67,7 @@ return (
     }}
     >
     <Typography variant="h4" color="primary">
-        Inicia sesión en tu cuenta BasketBliss
+        Inicia sesión en tu cuenta BasketBliss Administrador
     </Typography>
     </Stack>
     
@@ -110,7 +110,7 @@ return (
         gap: 3
         }}
     >
-            <Typography variant="body1" color="initial">Olvide mi password</Typography>
+            
         <Button 
         type="submit" 
         variant="contained" 
@@ -131,10 +131,8 @@ return (
     marginBottom:30,
     
     }}>
-    <Typography variant="body1" color="initial">¿Aún no tienes una cuenta? </Typography>
-    <Link href="/Register" passHref>
-     <Typography variant="body1" color="primary"> Registrate</Typography>
-    </Link>
+    
+    
    
     </Stack>
 </Box>
