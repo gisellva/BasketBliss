@@ -154,15 +154,7 @@ export default function () {
     <Toolbar>
       <Logo />
       
-      <Search sx={{ display: { xs: 'none', sm: 'flex' } }}>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
-        <StyledInputBase
-          placeholder="Search…"
-          inputProps={{ 'aria-label': 'search' }}
-        />
-      </Search>
+      
       
       <Box sx={{ flexGrow: 1 }} />
       
@@ -191,7 +183,7 @@ export default function () {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p>Admin</p>
        
       </Box>
       

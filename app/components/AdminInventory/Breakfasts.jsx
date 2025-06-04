@@ -1,26 +1,37 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Button, Box } from '@mui/material';
 
 export default function Breakfasts ({ onVolver }) {
   const [desayunos, setDesayunos] = useState([]);
 
-  useEffect(() => {
+ useEffect(() => {
     const fetchDesayunos = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/desayunos/', {
+        const token = localStorage.getItem('access_token');
+        const response = await fetch('http://127.0.0.1:8000/api/desayunos/', {
+          method: 'GET',
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-          },
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          }
         });
-        setDesayunos(response.data);
+
+        if (!response.ok) {
+          throw new Error('Error al obtener los desayunos');
+        }
+
+        const data = await response.json();
+        setDesayunos(data);
       } catch (error) {
-        console.error('Error al obtener desayunos:', error);
+        console.error('Error al cargar desayunos:', error);
+        alert('No se pudieron cargar los desayunos.');
       }
     };
 
     fetchDesayunos();
   }, []);
+
 
   return (
     <Box  sx={{

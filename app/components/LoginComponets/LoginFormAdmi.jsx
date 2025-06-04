@@ -48,7 +48,7 @@ localStorage.setItem('tipo_usuario', data.tipo_usuario);
 
 console.log('Inicio de sesión exitoso', data);
 alert('Login exitoso 🎉');
-    window.location.href = '/Home';
+    window.location.href = '/AdminView';
 
   } catch (error) {
     console.error('Error en la solicitud:', error);
