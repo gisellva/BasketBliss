@@ -180,7 +180,7 @@ export default function () {
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
-          sx={{ mr: 2 }} // Margen derecho entre el icono y el siguiente
+          sx={{ mr: 2 }} 
         >
           <ShoppingCartIcon />
         </IconButton>

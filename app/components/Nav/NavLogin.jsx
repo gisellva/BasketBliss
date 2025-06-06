@@ -18,6 +18,8 @@ import Logo from "./Logo"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import StoreIcon from '@mui/icons-material/Store';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import { useRouter } from 'next/navigation';
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -63,12 +65,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavLogin() {
+  const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+ const handleGoToProfile = () => {
+  handleMenuClose();
+  router.push('/Profile');  
+};
+ const handleGoToHome = () => {
+  
+  router.push('/Home');  
+};
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -85,6 +96,16 @@ export default function NavLogin() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleLogout = () => {
+  handleMenuClose();
+  localStorage.removeItem('access');
+  localStorage.removeItem('refresh');
+  localStorage.removeItem('tipo_usuario');
+  localStorage.removeItem('usuario_id');
+  localStorage.removeItem('nombre');
+  router.push('/Login'); 
+};
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -103,8 +124,8 @@ export default function NavLogin() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Logaut</MenuItem>
+      <MenuItem onClick={handleGoToProfile}>Perfil</MenuItem>
+      <MenuItem onClick={handleLogout}>Logaut</MenuItem>
     </Menu>
   );
 
@@ -188,7 +209,10 @@ export default function NavLogin() {
     <Box sx={{ flexGrow: 1}}>
       <AppBar position="static" sx={{backgroundColor:'white'}}>
         <Toolbar>
-         <Logo/>
+        <Box onClick={handleGoToHome} sx={{ cursor: 'pointer' }}>
+         <Logo />
+        </Box>
+       
           
           <Search sx={{display: { xs: 'none', sm: 'flex' }}}>
             <SearchIconWrapper>
